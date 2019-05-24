@@ -1,6 +1,8 @@
 # academy README
 
-Description: VS Code extension for quick access and smart queries of learning resources such as Stackoverflow,Youtube and W3 Schools.
+##Description
+
+VS Code extension for quick access and smart queries of learning resources such as Stackoverflow,Youtube and W3 Schools.
 
 ## Features
 
