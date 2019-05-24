@@ -10,16 +10,28 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
-			}
-		]
+		
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "AcademyMenu",
+					"title": "Academy",
+					"icon": "Icons/40x40_brain.png"
+				}
+			]
+		},
+		"views": {
+			"AcademyMenu":[{
+				"id": "AcademyMenu",
+				"name": "Main"
+			}]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
