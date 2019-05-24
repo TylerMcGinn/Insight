@@ -10,12 +10,16 @@
 		"Other"
 	],
 	"activationEvents": [
-		"*"
+		"*",
+		"onView:Extension.goToSite"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
-		
+			{
+				"command": "Extension.goToSite",
+				"title": "Go"
+			}
 		],
 		"viewsContainers": {
 			"activitybar": [
@@ -31,6 +35,14 @@
 				"id": "AcademyMenu",
 				"name": "Main"
 			}]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "Extension.goToSite",
+					"when": "view == AcademyMenu"
+				}
+			]
 		}
 	},
 	"scripts": {
