@@ -1,7 +1,11 @@
 {
+	"author": {
+		"name": "Tyler McGinn",
+		"email": "systematyler@gmail.com"
+	},
 	"name": "academy",
 	"displayName": "Academy",
-	"description": "VS Code extension for quick access and smart queries of learning resources such as Stackoverflow,Youtube and W3 Schools.",
+	"description": "VS Code extension for quick access and smart queries of learning resources such as Google,Stackoverflow,Youtube and W3 Schools.",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.34.0"
@@ -11,39 +15,52 @@
 	],
 	"activationEvents": [
 		"*",
-		"onView:Extension.goToSite"
+		"onView:Extension.customSearch",
+		"onView:Extension.search"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "Extension.goToSite",
-				"title": "Go"
+				"command": "Extension.search",
+				"title": "Search"
+			},
+			{
+				"command": "Extension.customSearch",
+				"title": "Custom Search",
+				"icon":{
+					"dark": "Icons/search.svg",
+					"light": "Icons/search.svg"
+				}
 			}
 		],
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "AcademyMenu",
+					"id": "Menu",
 					"title": "Academy",
 					"icon": "Icons/40x40_brain.png"
 				}
 			]
 		},
 		"views": {
-			"AcademyMenu":[{
-				"id": "AcademyMenu",
-				"name": "Main"
-			}]
+			"Menu":[
+				{
+					"id": "Menu",
+					"name": "Resources"
+				}
+			]
 		},
 		"menus": {
-			"view/title": [
+			"view/item/context": [
 				{
-					"command": "Extension.goToSite",
-					"when": "view == AcademyMenu"
+					"command": "Extension.customSearch",
+					"when": "view == Menu && viewItem == MenuItem",
+					"group": "inline"
 				}
 			]
 		}
+	
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

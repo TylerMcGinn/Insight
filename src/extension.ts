@@ -1,10 +1,28 @@
+
 import * as vscode from 'vscode';
-import {MenuDataProvider} from './Academy';
+import {QueryProvider} from './Academy';
+ 
 
-export function activate(context: vscode.ExtensionContext) {
-let provider = new MenuDataProvider;
-vscode.window.registerTreeDataProvider('AcademyMenu', provider);
-vscode.commands.registerCommand('Extension.goToSite',(websitUrl)=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(websitUrl)));
+export function activate(content: vscode.ExtensionContext) {
 
+vscode.commands.registerCommand('Extension.search', 
+    (websiteURL,querySyntax, language, query)=>{
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteURL}${querySyntax}${language}${query}`));
+    });
+
+vscode.commands.registerCommand('Extension.customSearch',
+    (websiteQuery)=>{
+        QueryProvider.getUserInput().then((output)=>{
+            output = output.replace(" ","+");
+            vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.querySyntax}${output}`));
+        });
+    });
+
+content.subscriptions.push(vscode.window.onDidChangeTextEditorSelection(QueryProvider.refreshTree));
+QueryProvider.refreshTree();
 }
+
+
+
+
 
