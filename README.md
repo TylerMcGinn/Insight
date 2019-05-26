@@ -1,4 +1,4 @@
-# Welcome to Academy
+# Welcome to Insight
 
 ## Description
 
