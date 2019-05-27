@@ -1,6 +1,6 @@
 
 import * as vscode from 'vscode';
-import {QueryProvider} from './Academy';
+import {QueryProvider} from './Insight';
  
 
 export function activate(content: vscode.ExtensionContext) {

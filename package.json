@@ -3,8 +3,8 @@
 		"name": "Tyler McGinn",
 		"email": "systematyler@gmail.com"
 	},
-	"name": "academy",
-	"displayName": "Academy",
+	"name": "insight",
+	"displayName": "Insight",
 	"description": "VS Code extension for quick access and smart queries of learning resources such as Google,Stackoverflow,Youtube and W3 Schools.",
 	"version": "0.0.1",
 	"engines": {
@@ -29,8 +29,8 @@
 				"command": "Extension.customSearch",
 				"title": "Custom Search",
 				"icon":{
-					"dark": "Icons/search.svg",
-					"light": "Icons/search.svg"
+					"dark": "Icons/Dark/search.png",
+					"light": "Icons/Light/search.png"
 				}
 			}
 		],
@@ -38,8 +38,8 @@
 			"activitybar": [
 				{
 					"id": "Menu",
-					"title": "Academy",
-					"icon": "Icons/40x40_brain.png"
+					"title": "Insight",
+					"icon": "Icons/darkeye.png"
 				}
 			]
 		},

@@ -26,7 +26,7 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
                 websiteURL:"https://www.youtube.com",
                 language: QueryProvider.getLanguage(),
                 query:QueryProvider.getSelectedText(),
-                icon:"youtube.jpg",
+                icon:"youtube.png",
                 description:QueryProvider.getLanguageForDescription() + QueryProvider.getSelectedText(),
                 collapsibleState:vscode.TreeItemCollapsibleState.None,
             },
@@ -36,7 +36,7 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
                 websiteURL:"https://stackoverflow.com",
                 language: QueryProvider.getLanguage(),
                 query:QueryProvider.getSelectedText(),
-                icon:"stack.png",
+                icon:"stackoverflow.png",
                 description:QueryProvider.getLanguageForDescription() + QueryProvider.getSelectedText(),
                 collapsibleState:vscode.TreeItemCollapsibleState.None
 
@@ -99,8 +99,8 @@ class MenuModel extends vscode.TreeItem{
         this.collapsibleState = collapsibleState;
         this.command = command;
         this.iconPath = {
-            dark: path.join(__filename,'..', '..','Icons',this.icon) ,
-            light: path.join(__filename,'..', '..','Icons',this.icon)
+            dark: path.join(__filename,'..', '..','Icons','Dark',this.icon) ,
+            light: path.join(__filename,'..', '..','Icons','Light',this.icon)
         };
     }
     contextValue = "MenuItem";
