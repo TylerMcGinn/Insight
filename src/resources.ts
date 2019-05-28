@@ -2,13 +2,13 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 
 
-export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
+export class ResourcesDataProvider implements vscode.TreeDataProvider<ResourcesModel>{
 
-    getTreeItem(element: MenuModel): vscode.TreeItem | Thenable<vscode.TreeItem> {
+    getTreeItem(element: ResourcesModel): vscode.TreeItem | Thenable<vscode.TreeItem> {
         return element;
     }
 
-    getChildren():MenuModel[] {
+    getChildren():ResourcesModel[] {
         let websiteList = [
             {
                 label:"Google",
@@ -56,7 +56,7 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
             // }
             
         ];
-        let menuItems:MenuModel[] = [];
+        let menuItems:ResourcesModel[] = [];
         if(websiteList.length !== 0){
             for(let i = 0; i<websiteList.length;i++){
                 let label = websiteList[i].label;
@@ -68,7 +68,7 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
                 let icon = websiteList[i].icon;
                 let description = websiteList[i].description;
                 let collapsibleState = websiteList[i].collapsibleState;
-                menuItems[i] = new MenuModel(
+                menuItems[i] = new ResourcesModel(
                     label, 
                     customQuerySyntax,
                     querySyntax, 
@@ -79,7 +79,7 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
                     description, 
                     collapsibleState,
                     {
-                        command:"Extension.search",
+                        command:"Resources.search",
                         title:'',
                         arguments:[websiteURL,querySyntax, language, query]
                     });
@@ -94,7 +94,7 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
 
 
 
-class MenuModel extends vscode.TreeItem{
+class ResourcesModel extends vscode.TreeItem{
     
     icon:string;
     customQuerySyntax:string;
@@ -190,8 +190,8 @@ export class QueryProvider{
     }
 
     static refreshTree(){
-        let selectedText = new MenuDataProvider();
-        vscode.window.registerTreeDataProvider('Menu', selectedText);
+        let resourcesProvider = new ResourcesDataProvider();
+        vscode.window.registerTreeDataProvider('Menu1', resourcesProvider);
     }
 
     static getUserInput():Thenable<string>{

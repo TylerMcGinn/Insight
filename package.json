@@ -15,23 +15,28 @@
 	],
 	"activationEvents": [
 		"*",
-		"onView:Extension.customSearch",
-		"onView:Extension.search"
+		"onView:Resources.customSearch",
+		"onView:Resources.search",
+		"onView:W3Schools.launch"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "Extension.search",
+				"command": "Resources.search",
 				"title": "Search"
 			},
 			{
-				"command": "Extension.customSearch",
+				"command": "Resources.customSearch",
 				"title": "Custom Search",
 				"icon": {
 					"dark": "Icons/Dark/search.png",
 					"light": "Icons/Light/search.png"
 				}
+			},
+			{
+				"command": "W3Schools.launch",
+				"title": "Launch W3"
 			}
 		],
 		"viewsContainers": {
@@ -46,16 +51,20 @@
 		"views": {
 			"Menu": [
 				{
-					"id": "Menu",
+					"id": "Menu1",
 					"name": "Resources"
+				},
+				{
+					"id": "Menu2",
+					"name": "W3 Schools"
 				}
 			]
 		},
 		"menus": {
 			"view/item/context": [
 				{
-					"command": "Extension.customSearch",
-					"when": "view == Menu && viewItem == MenuItem",
+					"command": "Resources.customSearch",
+					"when": "view == Menu1 && viewItem == MenuItem",
 					"group": "inline"
 				}
 			]

@@ -1,18 +1,19 @@
 
 import * as vscode from 'vscode';
-import {QueryProvider} from './Insight';
- 
+import {QueryProvider} from './resources';
+import {W3SchoolsDataProvider} from './w3schools';
 
 export function activate(content: vscode.ExtensionContext) {
 
-vscode.commands.registerCommand('Extension.search', 
+//////////////////////////////////////Resources Menu//////////////////////////////////////
+
+    vscode.commands.registerCommand('Resources.search', 
     (websiteURL,querySyntax, language, query)=>{
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteURL}${querySyntax}${language}${query}`));
     });
 
-vscode.commands.registerCommand('Extension.customSearch',
+vscode.commands.registerCommand('Resources.customSearch',
     (websiteQuery)=>{
-        console.log(websiteQuery);
         QueryProvider.getUserInput().then((output)=>{
             output = output.replace(" ","+");
             vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.customQuerySyntax}${output}`));
@@ -21,6 +22,13 @@ vscode.commands.registerCommand('Extension.customSearch',
 
 content.subscriptions.push(vscode.window.onDidChangeTextEditorSelection(QueryProvider.refreshTree));
 QueryProvider.refreshTree();
+
+//////////////////////////////////////W3 Schools Menu//////////////////////////////////////
+
+let w3Provider = new W3SchoolsDataProvider();
+vscode.window.registerTreeDataProvider('Menu2', w3Provider);
+vscode.commands.registerCommand('W3Schools.launch',(websiteURL)=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(websiteURL)));
+
 }
 
 
