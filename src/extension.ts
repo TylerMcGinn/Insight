@@ -12,9 +12,10 @@ vscode.commands.registerCommand('Extension.search',
 
 vscode.commands.registerCommand('Extension.customSearch',
     (websiteQuery)=>{
+        console.log(websiteQuery);
         QueryProvider.getUserInput().then((output)=>{
             output = output.replace(" ","+");
-            vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.querySyntax}${output}`));
+            vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.customQuerySyntax}${output}`));
         });
     });
 

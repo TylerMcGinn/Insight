@@ -9,9 +9,10 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
     }
 
     getChildren():MenuModel[] {
-        let items = [
+        let websiteList = [
             {
                 label:"Google",
+                customQuerySyntax:"/search?q=",
                 querySyntax:QueryProvider.getQuerySyntax("/search?q=") ,
                 websiteURL:"https://www.google.com",
                 language: QueryProvider.getLanguage(),
@@ -22,6 +23,7 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
             },
             {
                 label: "Youtube",
+                customQuerySyntax:"/results?search_query=",
                 querySyntax:QueryProvider.getQuerySyntax("/results?search_query="),
                 websiteURL:"https://www.youtube.com",
                 language: QueryProvider.getLanguage(),
@@ -32,30 +34,43 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
             },
             {
                 label:"StackOverflow",
-                querySyntax:QueryProvider.getQuerySyntax("/search?q=") ,
+                customQuerySyntax:"/search?q=",
+                querySyntax:QueryProvider.getQuerySyntax("/search?q="),
                 websiteURL:"https://stackoverflow.com",
                 language: QueryProvider.getLanguage(),
                 query:QueryProvider.getSelectedText(),
                 icon:"stackoverflow.png",
                 description:QueryProvider.getLanguageForDescription() + QueryProvider.getSelectedText(),
                 collapsibleState:vscode.TreeItemCollapsibleState.None
-
-            }
+            },
+            // {
+            //     label:"W3 Schools",
+            //     customQuerySyntax:"/search?q=w3schools",
+            //     querySyntax:QueryProvider.getQuerySyntax("/search?q=w3schools"),
+            //     websiteURL:"https://www.google.com",
+            //     language: QueryProvider.getLanguage(),
+            //     query:QueryProvider.getSelectedText(),
+            //     icon:"w3.png",
+            //     description:QueryProvider.getLanguageForDescription() + QueryProvider.getSelectedText(),
+            //     collapsibleState:vscode.TreeItemCollapsibleState.None
+            // }
             
         ];
         let menuItems:MenuModel[] = [];
-        if(items.length !== 0){
-            for(let i = 0; i<items.length;i++){
-                let label = items[i].label;
-                let querySyntax = items[i].querySyntax;
-                let websiteURL = items[i].websiteURL;
-                let language = items[i].language;
-                let query = items[i].query;
-                let icon = items[i].icon;
-                let description = items[i].description;
-                let collapsibleState = items[i].collapsibleState;
+        if(websiteList.length !== 0){
+            for(let i = 0; i<websiteList.length;i++){
+                let label = websiteList[i].label;
+                let customQuerySyntax = websiteList[i].customQuerySyntax;
+                let querySyntax = websiteList[i].querySyntax;
+                let websiteURL = websiteList[i].websiteURL;
+                let language = websiteList[i].language;
+                let query = websiteList[i].query;
+                let icon = websiteList[i].icon;
+                let description = websiteList[i].description;
+                let collapsibleState = websiteList[i].collapsibleState;
                 menuItems[i] = new MenuModel(
                     label, 
+                    customQuerySyntax,
                     querySyntax, 
                     websiteURL,
                     language,
@@ -82,14 +97,16 @@ export class MenuDataProvider implements vscode.TreeDataProvider<MenuModel>{
 class MenuModel extends vscode.TreeItem{
     
     icon:string;
+    customQuerySyntax:string;
     querySyntax:string;
     websiteURL:string;
     language:string;
     query:string;
 
-    constructor(label:string, querySyntax:string, websiteURL:string, language:string, query:string, icon:string, description:string, collapsibleState:vscode.TreeItemCollapsibleState, command:vscode.Command) {
+    constructor(label:string, customQuerySyntax:string, querySyntax:string, websiteURL:string, language:string, query:string, icon:string, description:string, collapsibleState:vscode.TreeItemCollapsibleState, command:vscode.Command) {
         super(label, collapsibleState);
         this.label = label;
+        this.customQuerySyntax = customQuerySyntax;
         this.querySyntax = querySyntax;
         this.websiteURL = websiteURL;
         this.language = language;

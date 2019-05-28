@@ -28,7 +28,7 @@
 			{
 				"command": "Extension.customSearch",
 				"title": "Custom Search",
-				"icon":{
+				"icon": {
 					"dark": "Icons/Dark/search.png",
 					"light": "Icons/Light/search.png"
 				}
@@ -44,7 +44,7 @@
 			]
 		},
 		"views": {
-			"Menu":[
+			"Menu": [
 				{
 					"id": "Menu",
 					"name": "Resources"
@@ -60,7 +60,6 @@
 				}
 			]
 		}
-	
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
