@@ -58,12 +58,6 @@ export class DocsDataProvider implements vscode.TreeDataProvider<DocsModel>{
                 collapsibleState:vscode.TreeItemCollapsibleState.None
             },
             {
-                label:"VB",
-                websiteURL:"https://docs.microsoft.com/en-gb/dotnet/visual-basic/language-reference/",
-                icon:"microsoft.png",
-                collapsibleState:vscode.TreeItemCollapsibleState.None
-            },
-            {
                 label:".NET",
                 websiteURL:"https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.8",
                 icon:"microsoft.png",

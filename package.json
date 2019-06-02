@@ -57,15 +57,15 @@
 			"Menu": [
 				{
 					"id": "Menu1",
-					"name": "Resources"
-				},
-				{
-					"id": "Menu3",
-					"name": "StackOverflow Top 2"
+					"name": "Search Resources"
 				},
 				{
 					"id": "Menu2",
 					"name": "Docs"
+				},
+				{
+					"id": "Menu3",
+					"name": "StackOverflow Search"
 				}
 			]
 		},

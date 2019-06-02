@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import {QueryProvider} from './resources';
 import {DocsDataProvider} from './Docs';
-import {Test} from "./stackOverflow";
+import {StackOverflowProvider} from "./stackOverflow";
 
 export function activate(content: vscode.ExtensionContext) {
 
@@ -30,9 +30,9 @@ vscode.window.registerTreeDataProvider('Menu2', DocsProvider);
 vscode.commands.registerCommand('Docs.launch',(websiteURL)=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(websiteURL)));
 
 //////////////////////////////////////stack//////////////////////////////////////
-// let stackOverflowProvider = new StackOverflowProvider();
-// vscode.window.registerTreeDataProvider("Menu3", stackOverflowProvider);
-vscode.commands.registerCommand('stack', ()=>{Test.testJsonData();});
+let stackOverflowProvider = new StackOverflowProvider();
+vscode.window.registerTreeDataProvider("Menu3", stackOverflowProvider);
+// vscode.commands.registerCommand('stack', ()=>{Test.testJsonData();});
 // vscode.commands.registerCommand('stack', ()=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse("https://api.stackexchange.com/2.2/search?page=1&pagesize=10&order=desc&sort=relevance&intitle=javascript%2Bfilter&site=stackoverflow")));
 }
 
