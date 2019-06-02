@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import * as https from 'https';
-import * as fs from 'fs';
+import * as path from "path";
 import * as zlib from 'zlib';
 
 export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverflowModel>{
@@ -22,7 +22,16 @@ export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverf
                     let {items} = JSON.parse(raw);
                     let menuArray:StackOverflowModel[] = [];
                     for(let arrIndex in items){
-                        menuArray.push(new StackOverflowModel(items[arrIndex]["title"], items[arrIndex]["link"], vscode.TreeItemCollapsibleState.None));
+                        menuArray.push(new StackOverflowModel(
+                            items[arrIndex]["title"], 
+                            items[arrIndex]["link"], 
+                            "stackoverflow.png", 
+                            vscode.TreeItemCollapsibleState.None,
+                            {
+                                "command":"stackOverflow.launch",
+                                "title":'',
+                                "arguments":[items[arrIndex]["link"]]
+                            }));
                     }
                     resolve(menuArray);
                 })
@@ -31,16 +40,23 @@ export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverf
                 });
             });
         });
-        
-        
     }
 }
 
 class StackOverflowModel extends vscode.TreeItem{
     url:string;
-    constructor(label:string, url:string, collapsibleState:vscode.TreeItemCollapsibleState) {
+    icon:string;
+    constructor(label:string, url:string, icon:string, collapsibleState:vscode.TreeItemCollapsibleState, command:vscode.Command) {
         super(label,collapsibleState);
+        this.label = label;
+        this.icon = icon;
         this.url = url;
+        this.collapsibleState = collapsibleState;
+        this.command = command;
+        this.iconPath = {
+            dark:path.join(__filename,'..', '..','Icons','Dark',this.icon),
+            light:path.join(__filename,'..', '..','Icons','Dark',this.icon)
+        };
     }
     contextValue = "searchResultItem";
 }
