@@ -53,8 +53,38 @@ export class DocsDataProvider implements vscode.TreeDataProvider<DocsModel>{
             },
             {
                 label:"C#",
-                websiteURL:"https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/index",
+                websiteURL:"https://docs.microsoft.com/en-gb/dotnet/csharp/language-reference/",
                 icon:"microsoft.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"VB",
+                websiteURL:"https://docs.microsoft.com/en-gb/dotnet/visual-basic/language-reference/",
+                icon:"microsoft.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:".NET",
+                websiteURL:"https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.8",
+                icon:"microsoft.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:".NET CORE",
+                websiteURL:"https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-2.2",
+                icon:"microsoft.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Python",
+                websiteURL:"https://docs.python.org/3/reference/index.html",
+                icon:"python.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Python Standard Lib",
+                websiteURL:"https://docs.python.org/3/library/index.html",
+                icon:"python.png",
                 collapsibleState:vscode.TreeItemCollapsibleState.None
             },
             
