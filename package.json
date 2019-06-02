@@ -18,6 +18,7 @@
 		"onView:Resources.customSearch",
 		"onView:Resources.search",
 		"onView:Docs.launch",
+		"onView:StackOverflow.search",
 		"onCommand:stack"
 	],
 	"main": "./out/extension.js",
@@ -42,6 +43,14 @@
 			{
 				"command": "stack",
 				"title": "stack open"
+			},
+			{
+				"command": "StackOverflow.seach",
+				"title": "Seach StackOverflow",
+				"icon":{
+					"dark": "Icons/Dark/search.png",
+					"light": "Icons/Light/search.png"
+				}
 			}
 		],
 		"viewsContainers": {
@@ -75,6 +84,11 @@
 					"command": "Resources.customSearch",
 					"when": "view == Menu1 && viewItem == MenuItem",
 					"group": "inline"
+				},
+				{
+					"command": "StackOverflow.search",
+					"when": "view == Menu3 && viewItem == searchResultItem",
+					"group": "navigation"
 				}
 			]
 		}

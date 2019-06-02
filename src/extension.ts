@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import {QueryProvider} from './resources';
-import {DocsDataProvider} from './Docs';
+import { QueryProvider } from "./queryProvider";
+import {DocsDataProvider} from './docs';
 import {StackOverflowProvider} from "./stackOverflow";
 
 export function activate(content: vscode.ExtensionContext) {

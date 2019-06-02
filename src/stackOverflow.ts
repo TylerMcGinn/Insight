@@ -42,6 +42,7 @@ class StackOverflowModel extends vscode.TreeItem{
         super(label,collapsibleState);
         this.url = url;
     }
+    contextValue = "searchResultItem";
 }
 
 // class StackOverflowModel{
