@@ -17,7 +17,8 @@
 		"*",
 		"onView:Resources.customSearch",
 		"onView:Resources.search",
-		"onView:W3Schools.launch"
+		"onView:Docs.launch",
+		"onCommand:stack"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -35,8 +36,12 @@
 				}
 			},
 			{
-				"command": "W3Schools.launch",
+				"command": "Docs.launch",
 				"title": "Launch W3"
+			},
+			{
+				"command": "stack",
+				"title": "stack open"
 			}
 		],
 		"viewsContainers": {
@@ -55,8 +60,12 @@
 					"name": "Resources"
 				},
 				{
+					"id": "Menu3",
+					"name": "StackOverflow Top 2"
+				},
+				{
 					"id": "Menu2",
-					"name": "W3 Schools"
+					"name": "Docs"
 				}
 			]
 		},

@@ -1,13 +1,13 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 
-export class W3SchoolsDataProvider implements vscode.TreeDataProvider<W3SchoolsModel>{
+export class DocsDataProvider implements vscode.TreeDataProvider<DocsModel>{
 
-    getTreeItem(element: W3SchoolsModel): vscode.TreeItem | Thenable<vscode.TreeItem> {
+    getTreeItem(element: DocsModel): vscode.TreeItem | Thenable<vscode.TreeItem> {
         return element;
     }
 
-    getChildren(): W3SchoolsModel[] {
+    getChildren(): DocsModel[] {
         let items = [
             {
                 label:"Javascript",
@@ -51,16 +51,22 @@ export class W3SchoolsDataProvider implements vscode.TreeDataProvider<W3SchoolsM
                 icon:"w3.png",
                 collapsibleState:vscode.TreeItemCollapsibleState.None
             },
+            {
+                label:"C#",
+                websiteURL:"https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/index",
+                icon:"microsoft.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
             
         ];
-        let MenuItems:W3SchoolsModel[] = [];
+        let MenuItems:DocsModel[] = [];
         if(items.length !== 0){
             for(let i = 0; i < items.length; i++){
                 let label = items[i].label;
                 let websiteURL = items[i].websiteURL;
                 let icon = items[i].icon;
                 let collapsibleState = items[i].collapsibleState;
-                MenuItems[i] = new W3SchoolsModel(
+                MenuItems[i] = new DocsModel(
                     label, 
                     websiteURL, 
                     icon, 
@@ -77,12 +83,14 @@ export class W3SchoolsDataProvider implements vscode.TreeDataProvider<W3SchoolsM
 
 }
 
-class W3SchoolsModel extends vscode.TreeItem{
+
+
+class DocsModel extends vscode.TreeItem{
     
     websiteURL:string;
     icon:string;
     
-    constructor(label:string, websiteURL:string, icon:string, collapsibleState:vscode.TreeItemCollapsibleState, command:vscode.Command) {
+    constructor(label:string, websiteURL:string, icon:string, collapsibleState:vscode.TreeItemCollapsibleState, command:vscode.Command){
         super(label, collapsibleState);
         this.websiteURL = websiteURL;
         this.icon = icon;

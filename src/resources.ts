@@ -43,18 +43,17 @@ export class ResourcesDataProvider implements vscode.TreeDataProvider<ResourcesM
                 description:QueryProvider.getLanguageForDescription() + QueryProvider.getSelectedText(),
                 collapsibleState:vscode.TreeItemCollapsibleState.None
             },
-            // {
-            //     label:"W3 Schools",
-            //     customQuerySyntax:"/search?q=w3schools",
-            //     querySyntax:QueryProvider.getQuerySyntax("/search?q=w3schools"),
-            //     websiteURL:"https://www.google.com",
-            //     language: QueryProvider.getLanguage(),
-            //     query:QueryProvider.getSelectedText(),
-            //     icon:"w3.png",
-            //     description:QueryProvider.getLanguageForDescription() + QueryProvider.getSelectedText(),
-            //     collapsibleState:vscode.TreeItemCollapsibleState.None
-            // }
-            
+            {
+                label:"MSDN",
+                customQuerySyntax:"/search/en-US?query=",
+                querySyntax:QueryProvider.getQuerySyntax("/search/en-US?query="),
+                websiteURL:"https://social.msdn.microsoft.com",
+                language: QueryProvider.getLanguage(),
+                query:QueryProvider.getSelectedText(),
+                icon:"microsoft.png",
+                description:QueryProvider.getLanguageForDescription() + QueryProvider.getSelectedText(),
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            }
         ];
         let menuItems:ResourcesModel[] = [];
         if(websiteList.length !== 0){

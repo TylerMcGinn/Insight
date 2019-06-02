@@ -1,7 +1,7 @@
-
 import * as vscode from 'vscode';
 import {QueryProvider} from './resources';
-import {W3SchoolsDataProvider} from './w3schools';
+import {DocsDataProvider} from './Docs';
+import {Test} from "./stackOverflow";
 
 export function activate(content: vscode.ExtensionContext) {
 
@@ -14,9 +14,9 @@ export function activate(content: vscode.ExtensionContext) {
 
 vscode.commands.registerCommand('Resources.customSearch',
     (websiteQuery)=>{
-        QueryProvider.getUserInput().then((output)=>{
-            output = output.replace(" ","+");
-            vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.customQuerySyntax}${output}`));
+        QueryProvider.getUserInput().then((userQuery)=>{
+            userQuery = encodeURIComponent(userQuery);
+            vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.customQuerySyntax}${userQuery}`));
         });
     });
 
@@ -25,10 +25,15 @@ QueryProvider.refreshTree();
 
 //////////////////////////////////////W3 Schools Menu//////////////////////////////////////
 
-let w3Provider = new W3SchoolsDataProvider();
-vscode.window.registerTreeDataProvider('Menu2', w3Provider);
-vscode.commands.registerCommand('W3Schools.launch',(websiteURL)=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(websiteURL)));
+let DocsProvider = new DocsDataProvider();
+vscode.window.registerTreeDataProvider('Menu2', DocsProvider);
+vscode.commands.registerCommand('Docs.launch',(websiteURL)=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(websiteURL)));
 
+//////////////////////////////////////stack//////////////////////////////////////
+// let stackOverflowProvider = new StackOverflowProvider();
+// vscode.window.registerTreeDataProvider("Menu3", stackOverflowProvider);
+vscode.commands.registerCommand('stack', ()=>{Test.testJsonData();});
+// vscode.commands.registerCommand('stack', ()=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse("https://api.stackexchange.com/2.2/search?page=1&pagesize=10&order=desc&sort=relevance&intitle=javascript%2Bfilter&site=stackoverflow")));
 }
 
 
