@@ -1,4 +1,5 @@
 import { SelectedTextModel, ResourcesDataProvider } from './resources';
+import {StackOverflowProvider} from './stackOverflow';
 import * as vscode from 'vscode';
 
 export class QueryProvider {
@@ -44,7 +45,7 @@ export class QueryProvider {
         }
     }
 
-    static refreshTree() {
+    static refreshResourcesTree() {
         let resourcesProvider = new ResourcesDataProvider();
         vscode.window.registerTreeDataProvider('Menu1', resourcesProvider);
     }
@@ -52,7 +53,7 @@ export class QueryProvider {
     static getUserInput(): Thenable<string> {
         let userQuery = vscode.window.showInputBox({
             prompt: "Enter Search Query!",
-            placeHolder: "ex: function Python print()",
+            placeHolder: "ex: Python print() function",
             ignoreFocusOut: true
         });
         return userQuery;

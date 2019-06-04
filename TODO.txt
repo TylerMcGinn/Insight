@@ -1,7 +1,4 @@
 TODO:
 
 1> stackoverflow.ts-
-                    link a launch command to stackoverflow search result to lauch browser when clicked.
-
-2> stackoverflow.ts-
-                    Need an input box for stack overflow search.
+                    add api key to url.

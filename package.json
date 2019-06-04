@@ -19,6 +19,7 @@
 		"onView:Resources.search",
 		"onView:Docs.launch",
 		"onView:StackOverflow.search",
+		"onView:StackOverflow.launch",
 		"onCommand:stack"
 	],
 	"main": "./out/extension.js",
@@ -38,7 +39,7 @@
 			},
 			{
 				"command": "Docs.launch",
-				"title": "Launch W3"
+				"title": "Launch Document in Browser"
 			},
 			{
 				"command": "stack",
@@ -51,6 +52,10 @@
 					"dark": "Icons/Dark/search.png",
 					"light": "Icons/Light/search.png"
 				}
+			},
+			{
+				"command": "StackOverflow.launch",
+				"title": "Launch StackOverFlow in Browser"
 			}
 		],
 		"viewsContainers": {
@@ -79,16 +84,18 @@
 			]
 		},
 		"menus": {
+			"view/title": [
+				{
+					"command": "StackOverflow.seach",
+					"when": "view == Menu3",
+					"group": "navigation"
+				}
+			],
 			"view/item/context": [
 				{
 					"command": "Resources.customSearch",
 					"when": "view == Menu1 && viewItem == MenuItem",
 					"group": "inline"
-				},
-				{
-					"command": "StackOverflow.search",
-					"when": "view == Menu3 && viewItem == searchResultItem",
-					"group": "navigation"
 				}
 			]
 		}

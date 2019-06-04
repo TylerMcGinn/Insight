@@ -5,13 +5,18 @@ import * as zlib from 'zlib';
 
 export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverflowModel>{
 
+    userQuery:string;
+    constructor(userQuery:string) {
+        this.userQuery = encodeURIComponent(userQuery) ;
+    }
+
     getTreeItem(element: StackOverflowModel): vscode.TreeItem | Thenable<vscode.TreeItem> {
         return element;
     }
 
     getChildren(): Thenable<StackOverflowModel[]> {
         return new Promise((resolve, reject)=>{
-            https.get("https://api.stackexchange.com/2.2/search?page=1&pagesize=2&order=desc&sort=relevance&intitle=javascript&site=stackoverflow", (res)=>{
+            https.get(`https://api.stackexchange.com/2.2/search?page=1&pagesize=15&order=desc&sort=relevance&intitle=${this.userQuery}&site=stackoverflow`, (res)=>{
                 let raw = '';
                 let gunzip = zlib.createGunzip();
                 res.pipe(gunzip);
@@ -28,7 +33,7 @@ export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverf
                             "stackoverflow.png", 
                             vscode.TreeItemCollapsibleState.None,
                             {
-                                "command":"stackOverflow.launch",
+                                "command":"StackOverflow.launch",
                                 "title":'',
                                 "arguments":[items[arrIndex]["link"]]
                             }));
@@ -55,7 +60,7 @@ class StackOverflowModel extends vscode.TreeItem{
         this.command = command;
         this.iconPath = {
             dark:path.join(__filename,'..', '..','Icons','Dark',this.icon),
-            light:path.join(__filename,'..', '..','Icons','Dark',this.icon)
+            light:path.join(__filename,'..', '..','Icons','Light',this.icon)
         };
     }
     contextValue = "searchResultItem";
