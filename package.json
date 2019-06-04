@@ -5,8 +5,13 @@
 	},
 	"name": "insight",
 	"displayName": "Insight",
-	"description": "VS Code extension for quick access and smart queries of learning resources such as Google,Stackoverflow,Youtube and W3 Schools.",
+	"description": "VS Code extension for quick access and smart queries of Developer resources such as Google,Stackoverflow,Youtube,MSDN and W3 Schools.",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TylerMcGinn/Insight.git"
+	},
+	"icon": "Icons/128x128_darkeye.png",	
 	"engines": {
 		"vscode": "^1.34.0"
 	},
@@ -19,8 +24,7 @@
 		"onView:Resources.search",
 		"onView:Docs.launch",
 		"onView:StackOverflow.search",
-		"onView:StackOverflow.launch",
-		"onCommand:stack"
+		"onView:StackOverflow.launch"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -40,10 +44,6 @@
 			{
 				"command": "Docs.launch",
 				"title": "Launch Document in Browser"
-			},
-			{
-				"command": "stack",
-				"title": "stack open"
 			},
 			{
 				"command": "StackOverflow.seach",
@@ -75,11 +75,11 @@
 				},
 				{
 					"id": "Menu2",
-					"name": "Docs"
+					"name": "StackOverflow Search"
 				},
 				{
 					"id": "Menu3",
-					"name": "StackOverflow Search"
+					"name": "Docs"
 				}
 			]
 		},
@@ -87,7 +87,7 @@
 			"view/title": [
 				{
 					"command": "StackOverflow.seach",
-					"when": "view == Menu3",
+					"when": "view == Menu2",
 					"group": "navigation"
 				}
 			],

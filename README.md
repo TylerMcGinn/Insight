@@ -2,7 +2,7 @@
 
 ## Description
 
-VS Code extension for quick access and smart queries of learning resources such as Stackoverflow,Youtube and W3 Schools.
+VS Code extension for quick access and smart queries of developer resources such as Stackoverflow,Youtube,MSDN and W3 Schools.
 
 ## Features
 

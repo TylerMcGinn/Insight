@@ -16,8 +16,10 @@ export function activate(content: vscode.ExtensionContext) {
 vscode.commands.registerCommand('Resources.customSearch',
     (websiteQuery)=>{
         QueryProvider.getUserInput().then((userQuery)=>{
-            userQuery = encodeURIComponent(userQuery);
-            vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.customQuerySyntax}${userQuery}`));
+            if(userQuery !== undefined){
+                userQuery = encodeURIComponent(userQuery);
+                vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`${websiteQuery.websiteURL}${websiteQuery.customQuerySyntax}${userQuery}`));
+            }
         });
     });
 
@@ -27,7 +29,7 @@ QueryProvider.refreshResourcesTree();
 //////////////////////////////////////W3 Schools Menu//////////////////////////////////////
 
 let DocsProvider = new DocsDataProvider();
-vscode.window.registerTreeDataProvider('Menu2', DocsProvider);
+vscode.window.registerTreeDataProvider('Menu3', DocsProvider);
 vscode.commands.registerCommand('Docs.launch',(websiteURL)=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(websiteURL)));
 
 //////////////////////////////////////stack//////////////////////////////////////
@@ -35,8 +37,10 @@ vscode.commands.registerCommand('Docs.launch',(websiteURL)=>vscode.commands.exec
 vscode.commands.registerCommand("StackOverflow.seach",
 ()=>{
     QueryProvider.getUserInput().then((userQuery)=>{
-        let stackOverflowProvider = new StackOverflowProvider(userQuery);
-        vscode.window.registerTreeDataProvider("Menu3", stackOverflowProvider);
+        if(userQuery !== undefined){
+            let stackOverflowProvider = new StackOverflowProvider(userQuery);
+            vscode.window.registerTreeDataProvider("Menu2", stackOverflowProvider);
+        }
     });
 });
 
@@ -44,8 +48,6 @@ vscode.commands.registerCommand("StackOverflow.launch",(Url)=>{
     vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(Url));
 });
 
-// vscode.commands.registerCommand('stack', ()=>{Test.testJsonData();});
-// vscode.commands.registerCommand('stack', ()=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse("https://api.stackexchange.com/2.2/search?page=1&pagesize=10&order=desc&sort=relevance&intitle=javascript%2Bfilter&site=stackoverflow")));
 }
 
 
