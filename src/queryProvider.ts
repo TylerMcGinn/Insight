@@ -45,9 +45,14 @@ export class QueryProvider {
         }
     }
 
-    static refreshResourcesTree() {
+    static refreshResourcesTree(): void {
         let resourcesProvider = new ResourcesDataProvider();
         vscode.window.registerTreeDataProvider('Menu1', resourcesProvider);
+    }
+
+    static refreshStackOverflowSearchTree(userQuery:string|undefined): void {
+        let stackOverflowProvider = new StackOverflowProvider(userQuery);
+        vscode.window.registerTreeDataProvider("Menu2", stackOverflowProvider);
     }
 
     static getUserInput(): Thenable<string> {
