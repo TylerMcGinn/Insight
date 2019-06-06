@@ -1,5 +1,5 @@
 import { ResourcesDataProvider } from './resources';
-import { SelectedTextModel } from "./SelectedTextModel";
+import { SelectedTextModel } from "./selectedTextModel";
 import { StackOverflowProvider } from './stackOverflow';
 import * as vscode from 'vscode';
 
