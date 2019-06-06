@@ -90,16 +90,16 @@ export class DocsDataProvider implements vscode.TreeDataProvider<DocsModel>{
                 let websiteURL = items[i].websiteURL;
                 let icon = items[i].icon;
                 let collapsibleState = items[i].collapsibleState;
-                MenuItems[i] = new DocsModel(
+                MenuItems.push(new DocsModel(
                     label, 
                     websiteURL, 
                     icon, 
                     collapsibleState,
                     {
-                        "command":"W3Schools.launch",
+                        "command":"Docs.launch",
                         "title":'',
                         "arguments":[websiteURL]
-                    });
+                    }));
             }
         }
         return MenuItems;

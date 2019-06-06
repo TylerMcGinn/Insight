@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { QueryProvider } from "./queryProvider";
-import {DocsDataProvider} from './docs';
+import { DocsDataProvider } from './docs';
 
 export function activate(content: vscode.ExtensionContext) {
 
@@ -24,13 +24,13 @@ vscode.commands.registerCommand('Resources.customSearch',
 content.subscriptions.push(vscode.window.onDidChangeTextEditorSelection(QueryProvider.refreshResourcesTree));
 QueryProvider.refreshResourcesTree();
 
-//////////////////////////////////////W3 Schools Menu//////////////////////////////////////
+//////////////////////////////////////Docs Menu//////////////////////////////////////
 
 let DocsProvider = new DocsDataProvider();
 vscode.window.registerTreeDataProvider('Menu3', DocsProvider);
 vscode.commands.registerCommand('Docs.launch',(websiteURL)=>vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(websiteURL)));
 
-//////////////////////////////////////stack//////////////////////////////////////
+//////////////////////////////////////StackOverflow Menu//////////////////////////////////////
 
 vscode.commands.registerCommand("StackOverflow.seach",
     ()=>{

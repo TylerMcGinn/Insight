@@ -2,7 +2,6 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import { QueryProvider } from './queryProvider';
 
-
 export class ResourcesDataProvider implements vscode.TreeDataProvider<ResourcesModel>{
 
     getTreeItem(element: ResourcesModel): vscode.TreeItem | Thenable<vscode.TreeItem> {
@@ -68,7 +67,7 @@ export class ResourcesDataProvider implements vscode.TreeDataProvider<ResourcesM
                 let icon = websiteList[i].icon;
                 let description = websiteList[i].description;
                 let collapsibleState = websiteList[i].collapsibleState;
-                menuItems[i] = new ResourcesModel(
+                menuItems.push( new ResourcesModel(
                     label, 
                     customQuerySyntax,
                     querySyntax, 
@@ -82,16 +81,12 @@ export class ResourcesDataProvider implements vscode.TreeDataProvider<ResourcesM
                         command:"Resources.search",
                         title:'',
                         arguments:[websiteURL,querySyntax, language, query]
-                    });
+                    }));
             }
-            return menuItems;
         }
+        return menuItems;
     }
 }
-
-
-/////////////////////////////////////////////////Data Provider and Model classes///////////////////////////////////////////////////////////////////
-
 
 
 class ResourcesModel extends vscode.TreeItem{
@@ -123,21 +118,6 @@ class ResourcesModel extends vscode.TreeItem{
     contextValue = "MenuItem";
 }
 
-
-
-export class SelectedTextModel{
-    lineStart:number;
-    lineEnd:number;
-    indexStart:number;
-    indexEnd:number;
-    
-    constructor(Obj:object) {
-        this.lineStart = Obj['start']['line'];
-        this.lineEnd = Obj['end']['line'];
-        this.indexStart = Obj['start']['character'];
-        this.indexEnd = Obj['end']['character'];  
-    }
-}
 
 
 

@@ -112,6 +112,23 @@
 					"group": "inline"
 				}
 			]
+		},
+		"configuration":{
+			"title": "Insight extension configuration",
+			"properties": {
+				"Insight.StackOverflowNumberOfDisplayedResults":{
+					"type":"number",
+					"default":15,
+					"description": "The number of results to be displayed from a search of StackOverflow. Default 15.",
+					"scope": "resource"
+				},
+				"Insight.newResourceItem":{
+					"type":"object",
+					"default":null,
+					"description": "An additional Resource to add to the Resource Menu.",
+					"scope": "resource"
+				}
+			}
 		}
 	},
 	"scripts": {

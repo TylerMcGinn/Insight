@@ -1,5 +1,6 @@
-import { SelectedTextModel, ResourcesDataProvider } from './resources';
-import {StackOverflowProvider} from './stackOverflow';
+import { ResourcesDataProvider } from './resources';
+import { SelectedTextModel } from "./SelectedTextModel";
+import { StackOverflowProvider } from './stackOverflow';
 import * as vscode from 'vscode';
 
 export class QueryProvider {
