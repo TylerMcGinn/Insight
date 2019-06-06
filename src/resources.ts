@@ -111,8 +111,8 @@ class ResourcesModel extends vscode.TreeItem{
         this.collapsibleState = collapsibleState;
         this.command = command;
         this.iconPath = {
-            dark: path.join(__filename,'..', '..','Icons','Dark',this.icon) ,
-            light: path.join(__filename,'..', '..','Icons','Light',this.icon)
+            dark: path.join(__filename,'..', '..','Media','Dark',this.icon) ,
+            light: path.join(__filename,'..', '..','Media','Light',this.icon)
         };
     }
     contextValue = "MenuItem";

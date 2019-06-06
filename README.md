@@ -1,67 +1,43 @@
-# Welcome to Insight
+## <strong>Welcome to Insight</strong>
+
+------------------------------------------------------------------------------------------------------------
 
 ## Description
 
-VS Code extension for quick access and smart queries of developer resources such as Stackoverflow,Youtube,MSDN and W3 Schools.
+VS Code extension for quick access and smart queries of developer resources such as Google,Stackoverflow,Youtube as well as Documentation for popular languages and frameworks.
+
+------------------------------------------------------------------------------------------------------------
 
 ## Features
+* Search StackOverflow from within your editor.
+* Quick launch, Highlighted search or custom search of popular resources such as Google,StackOverflow and Youtube.
+* Quick access to Popular Documentation.  
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+------------------------------------------------------------------------------------------------------------
 
 ## Extension Settings
+Use `Insight.StackOverflowNumberOfDisplayedResults` to set the displayed number of StackOverflow search results. 15 by Default:
+```json
+{
+    "Insight.StackOverflowNumberOfDisplayedResults":15
+}
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+------------------------------------------------------------------------------------------------------------
 
-For example:
+## Issues
+### Please submit any [issues](https://github.com/TylerMcGinn/Insight/issues) or suggestions. 
 
-This extension contributes the following settings:
+------------------------------------------------------------------------------------------------------------
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+## Contribution
+### Fork the [repo](https://github.com/TylerMcGinn/Insight) and submit pull requests.
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+------------------------------------------------------------------------------------------------------------
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
+Initial release
 
-Initial release of ...
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

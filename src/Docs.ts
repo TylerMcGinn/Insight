@@ -52,6 +52,12 @@ export class DocsDataProvider implements vscode.TreeDataProvider<DocsModel>{
                 collapsibleState:vscode.TreeItemCollapsibleState.None
             },
             {
+                label:"NodeJs",
+                websiteURL:"https://nodejs.org/dist/latest-v10.x/docs/api/",
+                icon:"nodejs.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
                 label:"C#",
                 websiteURL:"https://docs.microsoft.com/en-gb/dotnet/csharp/language-reference/",
                 icon:"microsoft.png",
@@ -120,8 +126,8 @@ class DocsModel extends vscode.TreeItem{
         this.icon = icon;
         this.command = command;
         this.iconPath = {
-            dark:path.join(__filename,'..','..','Icons', 'Dark', this.icon),
-            light:path.join(__filename,'..','..','Icons', 'Light', this.icon)
+            dark:path.join(__filename,'..','..','Media', 'Dark', this.icon),
+            light:path.join(__filename,'..','..','Media', 'Light', this.icon)
         };
     }
 
