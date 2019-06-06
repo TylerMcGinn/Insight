@@ -13,8 +13,8 @@ VS Code extension for quick access and smart queries of developer resources such
 * Quick launch, Highlighted search or custom search of popular resources such as Google,StackOverflow and Youtube.
 * Quick access to Popular Documentation.  
 
-
-------------------------------------------------------------------------------------------------------------
+![Usage](https://github.com/TylerMcGinn/Insight/blob/master/Media/highlightSearch.gif)
+------------------------------------------------------------------------------------------------
 
 ## Extension Settings
 Use `Insight.StackOverflowNumberOfDisplayedResults` to set the displayed number of StackOverflow search results. 15 by Default:
