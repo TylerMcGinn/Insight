@@ -17,8 +17,6 @@ export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverf
 
     getChildren(): Thenable<StackOverflowModel[]> {
         let menuArray:StackOverflowModel[] = [];
-        console.log(this.userQuery);
-        console.log(typeof(this.userQuery));
         if(this.userQuery === ''|| this.userQuery === undefined){
             menuArray.push(this.returnNoResultsFound());
             return Promise.resolve(menuArray);
