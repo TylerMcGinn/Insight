@@ -14,12 +14,14 @@ VS Code extension for quick access and smart queries of developer resources such
 
 ![Highlight Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/highlightSearch.gif)
 
-> **TIP**: Highlight language keywords for best results.
+> **TIP:** Highlight language keywords for best results.
 
 ![Custom Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/customSearch.gif)
 <br/>
 ![StackOverflow Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/stackOverflowSearch.gif)
-<br/>
+
+> **NOTE:** StackOverflow Api does not provide as good of results as a direct search.
+
 ![Documentation](https://github.com/TylerMcGinn/Insight/blob/master/Media/documentation.gif)
 ------------------------------------------------------------------------------------------------
 
