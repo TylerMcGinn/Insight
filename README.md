@@ -1,19 +1,26 @@
-## <strong>Welcome to Insight</strong>
+## **Welcome to Insight**
 
-------------------------------------------------------------------------------------------------------------
-
+------------------------------------------------------------------------------------------------
 ## Description
 
 VS Code extension for quick access and smart queries of developer resources such as Google,Stackoverflow,Youtube as well as Documentation for popular languages and frameworks.
 
-------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 ## Features
 * Search StackOverflow from within your editor.
 * Quick launch, Highlighted search or custom search of popular resources such as Google,StackOverflow and Youtube.
 * Quick access to Popular Documentation.  
 
-![Usage](https://github.com/TylerMcGinn/Insight/blob/master/Media/highlightSearch.gif)
+![Highlight Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/highlightSearch.gif)
+
+> **TIP**: Highlight language keywords for best results.
+
+![Custom Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/customSearch.gif)
+<br/>
+![StackOverflow Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/stackOverflowSearch.gif)
+<br/>
+![Documentation](https://github.com/TylerMcGinn/Insight/blob/master/Media/documentation.gif)
 ------------------------------------------------------------------------------------------------
 
 ## Extension Settings
@@ -24,17 +31,17 @@ Use `Insight.StackOverflowNumberOfDisplayedResults` to set the displayed number 
 }
 ```
 
-------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 ## Issues
 ### Please submit any [issues](https://github.com/TylerMcGinn/Insight/issues) or suggestions. 
 
-------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 ## Contribution
 ### Fork the [repo](https://github.com/TylerMcGinn/Insight) and submit pull requests.
 
-------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 ## Release Notes
 ### 1.0.0
