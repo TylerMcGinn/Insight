@@ -8,7 +8,7 @@ export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverf
     userQuery:string;
     
     constructor(userQuery:string) {
-        this.userQuery = encodeURIComponent(userQuery) ;
+        this.userQuery = userQuery ;
     }
 
     getTreeItem(element: StackOverflowModel): vscode.TreeItem | Thenable<vscode.TreeItem> {
@@ -17,15 +17,18 @@ export class StackOverflowProvider implements vscode.TreeDataProvider<StackOverf
 
     getChildren(): Thenable<StackOverflowModel[]> {
         let menuArray:StackOverflowModel[] = [];
+        console.log(this.userQuery);
+        console.log(typeof(this.userQuery));
         if(this.userQuery === ''|| this.userQuery === undefined){
             menuArray.push(this.returnNoResultsFound());
             return Promise.resolve(menuArray);
         }
         else{
             return new Promise((resolve, reject)=>{
+                let query = encodeURIComponent(this.userQuery);
                 let config = vscode.workspace.getConfiguration("Insight",vscode.window.activeTextEditor.document.uri);
                 let numDisplayResults = config.get('StackOverflowNumberOfDisplayedResults',15);
-                https.get(`https://api.stackexchange.com/2.2/search?page=1&pagesize=${numDisplayResults}&order=desc&sort=relevance&intitle=${this.userQuery}&site=stackoverflow`, (res)=>{
+                https.get(`https://api.stackexchange.com/2.2/search?page=1&pagesize=${numDisplayResults}&order=desc&sort=relevance&intitle=${query}&site=stackoverflow`, (res)=>{
                     let raw = '';
                     let gunzip = zlib.createGunzip();
                     res.pipe(gunzip);
