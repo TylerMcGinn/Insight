@@ -11,7 +11,8 @@
 		"type": "git",
 		"url": "https://github.com/TylerMcGinn/Insight.git"
 	},
-	"icon": "Media/128x128_eye.png",	
+	"icon": "Media/128x128_eye.png",
+	"publisher": "TMcGinn",	
 	"engines": {
 		"vscode": "^1.34.0"
 	},
