@@ -16,7 +16,7 @@ VS Code extension for quick access and smart queries of developer resources such
 * Quick launch, Highlighted search or custom search of popular resources such as Google,StackOverflow and Youtube.
 * Quick access to Popular Documentation.  
 
-![Highlight Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/highlightSearch.gif)
+![Highlight Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/customSearch.gif?raw=true)
 
 > **TIP:** Highlight language keywords for best results.
 
