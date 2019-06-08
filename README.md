@@ -1,6 +1,10 @@
 ## **Insight**
 
 ------------------------------------------------------------------------------------------------
+
+##**Warning:** Manual restart of your editor is required after install.
+
+------------------------------------------------------------------------------------------------
 ## Description
 
 VS Code extension for quick access and smart queries of developer resources such as Google,Stackoverflow,Youtube as well as Documentation for popular languages and frameworks.
@@ -46,7 +50,7 @@ Use `Insight.StackOverflowNumberOfDisplayedResults` to set the displayed number 
 ------------------------------------------------------------------------------------------------
 
 ## Release Notes
-### 1.0.0
+### 1.0.2
 Initial release
 
 

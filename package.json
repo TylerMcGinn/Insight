@@ -6,7 +6,7 @@
 	"name": "insight",
 	"displayName": "Insight",
 	"description": "VS Code extension for quick access and smart queries of Developer resources such as Google,Stackoverflow,Youtube,MSDN and W3 Schools.",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/TylerMcGinn/Insight.git"
