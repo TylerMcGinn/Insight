@@ -58,6 +58,72 @@ export class DocsDataProvider implements vscode.TreeDataProvider<DocsModel>{
                 collapsibleState:vscode.TreeItemCollapsibleState.None
             },
             {
+                label:"Express",
+                websiteURL:"https://expressjs.com/en/4x/api.html",
+                icon:"express.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"React",
+                websiteURL:"https://reactjs.org/docs/getting-started.html",
+                icon:"react.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Angular",
+                websiteURL:"https://docs.angularjs.org/api",
+                icon:"angular.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Bootstrap",
+                websiteURL:"https://getbootstrap.com/docs/4.3/getting-started/introduction/",
+                icon:"bootstrap.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Sass",
+                websiteURL:"https://sass-lang.com/documentation",
+                icon:"sass.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"GraphQL",
+                websiteURL:"https://graphql.org/code/",
+                icon:"graphql.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Gatsby",
+                websiteURL:"https://www.gatsbyjs.org/docs/",
+                icon:"gatsby.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"React Native",
+                websiteURL:"https://facebook.github.io/react-native/docs/getting-started",
+                icon:"react.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Ionic",
+                websiteURL:"https://ionicframework.com/docs",
+                icon:"ionic.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Python",
+                websiteURL:"https://docs.python.org/3/reference/index.html",
+                icon:"python.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
+                label:"Python Standard Lib",
+                websiteURL:"https://docs.python.org/3/library/index.html",
+                icon:"python.png",
+                collapsibleState:vscode.TreeItemCollapsibleState.None
+            },
+            {
                 label:"C#",
                 websiteURL:"https://docs.microsoft.com/en-gb/dotnet/csharp/language-reference/",
                 icon:"microsoft.png",
@@ -75,18 +141,7 @@ export class DocsDataProvider implements vscode.TreeDataProvider<DocsModel>{
                 icon:"microsoft.png",
                 collapsibleState:vscode.TreeItemCollapsibleState.None
             },
-            {
-                label:"Python",
-                websiteURL:"https://docs.python.org/3/reference/index.html",
-                icon:"python.png",
-                collapsibleState:vscode.TreeItemCollapsibleState.None
-            },
-            {
-                label:"Python Standard Lib",
-                websiteURL:"https://docs.python.org/3/library/index.html",
-                icon:"python.png",
-                collapsibleState:vscode.TreeItemCollapsibleState.None
-            },
+            
             
         ];
         let MenuItems:DocsModel[] = [];

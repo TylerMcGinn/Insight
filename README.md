@@ -50,7 +50,7 @@ Use `Insight.StackOverflowNumberOfDisplayedResults` to set the displayed number 
 ------------------------------------------------------------------------------------------------
 
 ## Release Notes
-### 1.0.0
-Initial release
+### 1.0.1
+- Added documentation links for Express, React, Angular, Bootstrap, Sass, Gatsby, GraphQL, React Navive, Ionic
 
 
