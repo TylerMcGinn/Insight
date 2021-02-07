@@ -1,33 +1,34 @@
-## **Insight**
+# **Insight: Search in VSCode**
 
-------------------------------------------------------------------------------------------------
-
-## **Warning:** Manual restart of your editor is required after install!!!
-
-------------------------------------------------------------------------------------------------
 ## Description
 
-VS Code extension for quick access and smart queries of developer resources such as Google,Stackoverflow,Youtube as well as Documentation for popular languages and frameworks.
-
-------------------------------------------------------------------------------------------------
+A VS Code extension for quick access and smart queries of developer resources such as Google, Stackoverflow and YouTube as well as documentation for popular languages and frameworks.
 
 ## Features
-* Search StackOverflow from within your editor.
-* Quick launch, Highlighted search or custom search of popular resources such as Google,StackOverflow and Youtube.
-* Quick access to Popular Documentation.  
+* Launch popular sites right from VSCode (including popular language/framework docs)
+* Search what you're highlighting
+* Search custom terms within your editor
 
-![Highlight Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/highlightSearch.gif?raw=true)
+## Examples
+**Search Highlighted Text**
 
 > **TIP:** Highlight language keywords for best results.
 
+![Highlight Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/highlightSearch.gif?raw=true)
+
+**Custom Search**
+
 ![Custom Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/customSearch.gif?raw=true)
-<br/>
+
+**Search StackOverflow**
+
+> **NOTE:** The StackOverflow API does not provide as good of results as a direct search.
+
 ![StackOverflow Search](https://github.com/TylerMcGinn/Insight/blob/master/Media/stackOverflowSearch.gif?raw=true)
 
-> **NOTE:** StackOverflow Api does not provide as good of results as a direct search.
+**Documentation Search**
 
 ![Documentation](https://github.com/TylerMcGinn/Insight/blob/master/Media/documentation.gif?raw=true)
-------------------------------------------------------------------------------------------------
 
 ## Extension Settings
 Use `Insight.StackOverflowNumberOfDisplayedResults` to set the displayed number of StackOverflow search results. 15 by Default:
@@ -37,20 +38,12 @@ Use `Insight.StackOverflowNumberOfDisplayedResults` to set the displayed number 
 }
 ```
 
-------------------------------------------------------------------------------------------------
-
-## Issues
-### Please submit any [issues](https://github.com/TylerMcGinn/Insight/issues) or suggestions. 
-
-------------------------------------------------------------------------------------------------
-
-## Contribution
-### Fork the [repo](https://github.com/TylerMcGinn/Insight) and submit pull requests.
-
-------------------------------------------------------------------------------------------------
-
 ## Release Notes
 ### 1.0.1
 - Added documentation links for Express, React, Angular, Bootstrap, Sass, Gatsby, GraphQL, React Navive, Ionic
 
+## Issues
+### Please submit any issues or suggestions [here](https://github.com/TylerMcGinn/Insight/issues).
 
+## Contribution
+### Fork the [repo](https://github.com/TylerMcGinn/Insight) and submit pull requests.
